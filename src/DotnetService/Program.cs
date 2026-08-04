@@ -8,6 +8,8 @@ var app = builder.Build();
 app.MapGet("/greeting", (string? name, GreetingService greetings) =>
     Results.Ok(new GreetingResponse(greetings.Greet(name))));
 
+app.MapGet("/version", () => "harness-cd-demo v2 - auto-deployed by Harness");
+
 app.Run();
 
 public record GreetingResponse(string Message);
