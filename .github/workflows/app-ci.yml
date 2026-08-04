@@ -4,7 +4,15 @@ name: CI
   push:
     branches:
     - main
-  pull_request: null
+    paths-ignore:
+    - .github/**
+    - .harness/**
+    - '**.md'
+  pull_request:
+    paths-ignore:
+    - .github/**
+    - .harness/**
+    - '**.md'
   workflow_dispatch: null
 permissions:
   contents: read
